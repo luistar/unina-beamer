@@ -1,0 +1,18 @@
+#files not to be versioned
+.vscode
+
+*.out
+*.blg
+*.toc
+*.log
+*.aux
+*.bbl
+*.bcf
+*.run.xml
+*.synctex*
+*.fls
+*latexmk
+
+*.nav
+*.snm
+*.vrb

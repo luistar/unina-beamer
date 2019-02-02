@@ -1,0 +1,245 @@
+\documentclass[10pt,aspectratio=43
+	%,handout
+	]{beamer}
+	\usetheme[
+	%%% options passed to the outer theme
+	%   rotationcw,          % change the rotation direction from counter-clockwise to clockwise
+		sectionpages, 		% show section pages
+		logo={_figures/logo-federico-II-blue.pdf}
+	]{UniNA}
+
+	%\setbeamercovered{transparent}
+	
+	\usepackage[utf8]{inputenc}
+	\usepackage[english]{babel}
+	\usepackage[T1]{fontenc}
+
+	\usepackage[scaled]{beramono}     %mono?
+	\usepackage[scale=1.15]{AlegreyaSans}
+	
+	\title[The UniNA Beamer Theme] %shown at the top of frames
+	{The UniNA Beamer Theme} %shown in title frame
+	%\subtitle{M.Sc. Thesis in Computer Science}  % could also be a conference name
+	
+	%\date{December 6, 2018} %explicitly set date instead of \today
+	
+	\author[Luigi Libero Lucio Starace]%shown at the top of frames
+	{%shown in title frame
+		{\footnotesize A beamer theme by}\\
+		Luigi Libero Lucio \textsc{Starace}%
+	}
+	
+	% - Give the names in the same order as they appear in the paper.
+	% - Use the \inst{?} command only if the authors have different
+	%   affiliation. See the beamer manual for an example
+	
+	\institute[
+		Department of Electrical Engineering and Information Technology\\
+		Università degli Studi di Napoli Federico II\\
+		Italy
+	]
+	{% is placed on the bottom of the title page
+		Università degli Studi di Napoli Federico II
+	}
+
+	\begin{document}
+
+	\maketitle
+
+	% TOC
+	\begin{frame}{Agenda}{}
+		\tableofcontents
+	\end{frame}
+
+	\section{Introduction}
+	% motivation for creating this theme
+	\begin{frame}{Introduction}{Why the UniNA beamer theme?}
+		%\begin{block}{Why the UniNA beamer theme?}
+			\begin{itemize}[<+->]
+				\item I created this theme for my M.Sc. thesis presentation at the University of Naples, Federico II.
+				\item The theme is based on the \href{https://github.com/jkjaer/aauLatexTemplates/tree/master/aauBeamer/aausimplerg}{\alert{AAU Simple}} beamer theme by 
+				\href{https://github.com/jkjaer}{\alert{Jesper Kjær Nielsen}}.
+			\end{itemize}
+		%\end{block}
+	\end{frame}
+
+	\section{Installation}
+	% general installation instructions
+	\begin{frame}{Installation}
+	The theme consists of five files
+	\begin{enumerate}
+		\item {\tt beamerthemeUniNA.sty}
+		\item {\tt beamerinnerthemeUniNA.sty}
+		\item {\tt beamerouterthemeUniNA.sty}
+		\item {\tt beamercolorthemeUniNA.sty}
+		\item {\tt beamerfontthemeUniNA.sty}
+	\end{enumerate}
+	The theme can either be installed for local or global use.
+	\pause
+	\begin{block}{Local Installation}
+		The simplest way of installing the theme is by placing the five theme files in the same 
+		folder as your presentation.
+	\end{block}
+	\end{frame}
+
+	% general installation instructions
+	\begin{frame}{Installation}
+	\begin{block}{Global Installation}
+	\begin{itemize}
+		\item If you wish to make the theme globally available, you must put the files in your local LaTeX directory tree.
+		The location of the root of the local directory tree depends on the operating system and the LaTeX distribution.
+		\item Refer to your distribution's documentation for details.
+	\end{itemize}
+	\end{block}
+	\end{frame}
+
+\subsection{Required Packages}
+% list of required packages
+\begin{frame}{Installation}{Required Packages}
+  Of course, you have to have the Beamer class installed. In addition, the theme loads the following packages:
+  \begin{itemize}
+	\item TikZ\footnote[frame]{By the way, TikZ is an awesome package for creating beautiful graphics, and this is a footnote.};
+    \item calc, fp, adjustbox, setspace, transparent.
+  \end{itemize}
+  These packages are very common and should therefore be included in your LaTeX distribution.
+\end{frame}
+%%%%%%%%%%%%%%%%
+
+\section{User Interface}
+\subsection{Loading the Theme and Theme Options}
+% list of the themes and options
+\begin{frame}{User Interface}{Loading the Theme and Theme Options}
+  \begin{block}{The Presentation Theme}
+    It is very simple to load the presentation theme. Just type\\
+    {\tt \textbackslash usetheme[<options>]\{UniNA\}}\\
+	which is exactly the same way other beamer presentation themes are loaded. 
+	The presentation theme loads the inner, outer, color and font UniNA theme files 
+	and passes the {\tt <options>} on to these files.
+  \end{block}
+\end{frame}
+%%%%%%%%%%%%%%%%
+
+% list of the themes and options
+\begin{frame}{User Interface}{Theme Options}
+  \begin{block}{Theme options}
+    The following options are available:
+  \begin{itemize}
+	\item {\tt rotationcw}: set the direction of the rotation of the progress circle 
+	to clockwise instead of counterclockwise.
+    \item {\tt sectionpages}: show section pages.
+    \item {\tt logo}: used to specify the path to the logo to use in the upper right corner.
+  \end{itemize}
+  \end{block}
+\end{frame}
+%%%%%%%%%%%%%%%%
+
+\subsection{Modifying the theme}
+% how to modify the theme
+{\setbeamercolor{UniNA}{fg=blue!50,bg=green!60}
+ \setbeamercolor{structure}{fg=red}
+ \setbeamercolor{frametitle}{use=structure,fg=structure.fg}
+ \setbeamercolor{itemize/enumerate body}{fg=white, bg=red}
+ \setbeamercolor{normal text}{fg=white}
+ \setbeamercolor{alerted text}{fg=blue}
+ \setbeamercolor{background canvas}{bg=purple!50}
+\begin{frame}[fragile]{User Interface}{Modifying the Theme}
+  \begin{itemize}[<+->]
+	\item You can modify specific elements of the theme through the 
+	templates provided by the beamer class. Please refer to the beamer user manual for instructions.
+    \item For example, on this rather bizarre-looking slide the following commands have been used:
+	\begin{verbatim}
+\setbeamercolor{UniNA}{fg=blue!50,bg=green!60}
+\setbeamercolor{structure}{fg=red}
+\setbeamercolor{frametitle}{use=structure,fg=structure.fg}
+\setbeamercolor{itemize/enumerate body}{fg=white, bg=red}
+\setbeamercolor{normal text}{fg=white}
+\setbeamercolor{alerted text}{fg=blue}
+\setbeamercolor{background canvas}{bg=purple!50}
+	\end{verbatim}
+  \end{itemize}
+\end{frame}
+}
+
+\begin{frame}{User Interface}{Modifying the Theme}
+	\begin{itemize}[<+->]
+		\item If you want to change the main colour and need a matching Federico II logo,
+		  	you can compile your own as follows:
+		  	\begin{enumerate}[<+->]
+				\item change the definition of \texttt{logocolor} in 
+					\texttt{logo/logo-federico-II.tex} accordingly to your needs;
+				\item compile \texttt{logo/logo-federico-II.tex} with \texttt{xelatex};
+			\end{enumerate}
+		\item With your version of the logo in place, you can change the value of the \texttt{logo}
+			parameter to the path of your own logo.
+	\end{itemize}
+\end{frame}
+
+\subsection{Frames}
+
+\begin{frame}[plain]{Plain frame}{Subtitle}
+	This is a frame with no header thanks to the \texttt{plain} option.
+\end{frame}
+
+\begin{frame}[noframenumbering]{Unnumbered frame}{Subtitle}
+	This is a frame not contributing to the frame count, thanks to the \texttt{noframenumbering} option.
+\end{frame}
+
+\subsection{Math and blocks}
+
+\begin{frame}{Math and blocks}{Test math and blocks}
+	The following text is \alert<2>{alerted} in the next slide. 
+	Now some math mode:
+	if $R=\{x\mid x\not\in x\}$, then $R\in R \Leftrightarrow R\not\in R$.
+	\begin{block}{Observation}
+	This is an observation.
+	\end{block}
+	\begin{exampleblock}{Example 14}
+	This is a nice example block.
+	\end{exampleblock}
+	\begin{alertblock}{Beware!}
+	Naive set theory is \emph{a wolf in sheep's clothing?}
+	\end{alertblock}
+\end{frame}
+
+\subsection{Standout frames}
+
+
+\begin{frame}[fragile]{Standout frames}{}
+	The UniNA beamer theme supports standout frames. For example, the following
+	\begin{verbatim}
+\begin{frame}[plain,noframenumbering]
+	\standoutpage{This is a dark standout frame!}
+\ end{frame}
+
+\begin{frame}[plain,noframenumbering]
+	\standoutpagelight{This is a light standout frame!}
+\ end{frame}
+	\end{verbatim}
+	produces the following two slides.
+\end{frame}
+
+\begin{frame}[plain,noframenumbering]
+	\standoutpage{This is a dark standout frame!}
+\end{frame}
+
+\begin{frame}[plain,noframenumbering]
+	\standoutpagelight{This is a light standout frame!}
+\end{frame}
+
+\subsection{Widescreen Support}
+% Widescreen Support
+\begin{frame}{User Interface}{Widescreen Support}
+\begin{block}{Widescreen Support}
+	Newer projectors and almost any modern TV support a widescreen format such as 16:10 or 16:9. Beamer (>= v. 3.10) supports various aspect ratios of the slides. According to section 8.3 on page 77 of the Beamer user guide v. 3.10, you can write\\
+{\tt\textbackslash documentclass[aspectratio=1610]\{beamer\}}\\
+to get slides with an aspect ratio of 16:10. You can also use 169, 149, 54, 43 (default), and 32 to get other aspect ratios.
+\end{block}
+\end{frame}
+
+%final slide
+\begin{frame}[plain,noframenumbering]
+	\standoutpage{\bfseries\huge Thank you for your time!}
+\end{frame}
+
+\end{document}
+		
