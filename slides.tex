@@ -16,6 +16,10 @@
 
 	\usepackage[scaled]{beramono}     %mono?
 	\usepackage[scale=1.15]{AlegreyaSans}
+
+    \usepackage{csquotes}
+    \usepackage{biblatex}
+    \addbibresource{bibliography.bib}
 	
 	\title[The UniNA Beamer Theme] %shown at the top of frames
 	{The UniNA Beamer Theme} %shown in title frame
@@ -234,6 +238,24 @@
 {\tt\textbackslash documentclass[aspectratio=1610]\{beamer\}}\\
 to get slides with an aspect ratio of 16:10. You can also use 169, 149, 54, 43 (default), and 32 to get other aspect ratios.
 \end{block}
+\end{frame}
+
+
+
+\subsection{Bibliography}
+% Widescreen Support
+\begin{frame}{Bibliography}{Insert bibliographic references}
+	\begin{itemize}
+	    \item To include a bibliography, you can use: \texttt{\tt\textbackslash printbibliography[heading=none]} in a slide with \texttt{allowframebreaks}.
+        \item Cite items as usual, e.g.: \cite{dijkstra1972humbleprogrammer, lamport1982proving} \nocite{*}
+        \item Thanks to \href{https://github.com/luistar/unina-beamer/issues/1}{Taha Ahmet (@solarchemist)}!
+        \item An example is shown in the next slide.
+	\end{itemize}
+\end{frame}
+
+\begin{frame}[t,allowframebreaks]
+   \frametitle{Bibliography}
+   \printbibliography[heading=none]
 \end{frame}
 
 %final slide
